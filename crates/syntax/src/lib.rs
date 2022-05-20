@@ -52,14 +52,14 @@ impl From<TokenKind> for SyntaxKind {
     }
 }
 
-pub type SyntaxNode = rowan::SyntaxNode<EldiroLanguage>;
-pub type SyntaxElement = rowan::SyntaxElement<EldiroLanguage>;
-pub type SyntaxToken = rowan::SyntaxToken<EldiroLanguage>;
+pub type SyntaxNode = rowan::SyntaxNode<ParsaLanguage>;
+pub type SyntaxElement = rowan::SyntaxElement<ParsaLanguage>;
+pub type SyntaxToken = rowan::SyntaxToken<ParsaLanguage>;
 
 #[derive(Debug, Copy, Clone, Ord, PartialOrd, Eq, PartialEq, Hash)]
-pub enum EldiroLanguage {}
+pub enum ParsaLanguage {}
 
-impl rowan::Language for EldiroLanguage {
+impl rowan::Language for ParsaLanguage {
     type Kind = SyntaxKind;
 
     fn kind_from_raw(raw: rowan::SyntaxKind) -> Self::Kind {

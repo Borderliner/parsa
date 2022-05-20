@@ -4,7 +4,7 @@ use crate::Parse;
 use lexer::Token;
 use rowan::{GreenNodeBuilder, Language};
 use std::mem;
-use syntax::EldiroLanguage;
+use syntax::ParsaLanguage;
 
 pub(crate) struct Sink<'t, 'input> {
     builder: GreenNodeBuilder<'static>,
@@ -57,7 +57,7 @@ impl<'t, 'input> Sink<'t, 'input> {
                     }
 
                     for kind in kinds.into_iter().rev() {
-                        self.builder.start_node(EldiroLanguage::kind_to_raw(kind));
+                        self.builder.start_node(ParsaLanguage::kind_to_raw(kind));
                     }
                 }
                 Event::AddToken => self.token(),
@@ -89,7 +89,7 @@ impl<'t, 'input> Sink<'t, 'input> {
         let Token { kind, text, .. } = self.tokens[self.cursor];
 
         self.builder
-            .token(EldiroLanguage::kind_to_raw(kind.into()), text);
+            .token(ParsaLanguage::kind_to_raw(kind.into()), text);
 
         self.cursor += 1;
     }

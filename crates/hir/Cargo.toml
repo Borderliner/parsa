@@ -1,6 +1,6 @@
 [package]
 authors = ["Reza Hajianpour <hajianpour.mr@gmail.com>"]
-edition = "2022"
+edition = "2021"
 license = "MIT OR Apache-2.0"
 name = "hir"
 version = "0.1.0"

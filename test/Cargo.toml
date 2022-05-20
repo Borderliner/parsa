@@ -1,8 +1,8 @@
 [package]
-authors = ["Aramis Razzaghipour <aramisnoah@gmail.com>"]
-edition = "2018"
+authors = ["Reza Hajianpour <hajianpour.mr@gmail.com>"]
+edition = "2022"
 license = "MIT OR Apache-2.0"
-name = "fuzz"
+name = "test"
 version = "0.1.0"
 
 [package.metadata]
